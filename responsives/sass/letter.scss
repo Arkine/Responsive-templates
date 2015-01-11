@@ -1,0 +1,224 @@
+@charset "utf-8";
+/* letter.scss */
+@import "variables";
+@import "bootstrap"; // custom import of only bootstrap components organized in the bootstrap folder
+@import "bootstrap_overrides"; // override or add missing bootstrap styles here
+@import "theme";
+
+.badge {
+	background-color: transparent !important;
+	border-radius: 0 !important;
+	padding: 0 !important;
+	margin-bottom: 15px;
+	.section-img {
+		cursor: pointer;
+	}
+}
+
+
+#main-content {
+	margin-top: 20px;
+	.row {
+		.col#left-col {
+			@include make-xs-column(0);
+		  @include make-sm-column(4); 
+		  @include make-md-column(4);
+		  @include make-lg-column(4);
+		}
+		.col#mid-col {
+			@include font_size(14px,!important);
+
+			@include make-xs-column(12);
+		  @include make-sm-column(6); 
+		  @include make-md-column(6);
+		  @include make-lg-column(6);
+		}
+		.col#right-col {
+			padding-left: 0 !important;
+			
+			@include make-xs-column(0);
+		  @include make-sm-column(2); 
+		  @include make-md-column(2);
+		  @include make-lg-column(2);
+			
+			.badge {
+				margin-left: -2px !important;
+			}
+		}
+	}	
+}
+
+@media screen and (max-width: $screen-xs-max) { // width < 767 (was $screen-sm-min 768)
+
+	.row-no-margin {
+		background-image: none !important;
+	}
+	.jumbotron {
+		margin-bottom: 0 !important;
+		min-width: 320px;
+	}
+	.navbar-default {
+		display: none;
+	}
+
+	#main-content {
+		.row {
+			.col#right-col {
+				display: none;
+			}
+			.col#mid-col {
+				padding-right: 15px !important;
+				//padding-left: 25px !important;
+			}
+		}
+	}
+}
+
+
+@media screen and (min-width: $screen-sm-min) { // width > 768px
+	.col#mid-col {
+		padding-right: 25px !important;
+	}
+	#main-content {
+		.row {
+			.col#right-col {
+				padding-right: 0 !important;
+			}
+		}
+	}
+	
+	
+}
+
+/*----- Tablet breakpoint ("M") -------*/
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
+	
+	.row-no-margin {
+		background: url("../images/d-t2-2014-state-of-the-grid.gif") 100px 0 no-repeat !important;
+	}
+	
+	.container#main-content {
+		//border: 1px solid red;
+	}
+	
+	#main-content {
+		width: 688px; // force width to banner width
+		margin-top: 28px;
+		p {
+			@include font_size(11px);
+			@include line_height(14.65px);
+		}
+		.row {
+			.col#left-col {
+				//display: none !important;
+			}
+			.col#mid-col {
+				padding-right: 30px !important;
+				padding-left: 20px !important;
+			}
+		}
+	}
+	.badge-content {
+		//border: 1px solid black;
+		padding: 0 !important;
+		h3 {
+			margin: 0 !important;
+			a {
+				display: block;
+				width: 117px;
+				height: 25px;
+				background: url(../images/t-sub-nav-renewable-integration-button.png) top left no-repeat;
+			}
+		}
+		// programmatic hover via JS
+		&.hovered {
+			h3 a {
+				background-position: 0 -25px;
+			}
+		}
+	}
+
+	#renewables-integration-block h3 a {
+		background-image: url(../images/t-sub-nav-renewables-integration-button.png);
+	}
+	#smarter-grid-block h3 a {
+		background-image: url(../images/t-sub-nav-smarter-grid-button.png);
+	}
+	#grid-resiliency-block h3 a {
+		background-image: url(../images/t-sub-nav-grid-resiliency-button.png);
+	}
+	#resource-adequacy-block h3 a {
+		background-image: url(../images/t-sub-nav-resource-adequacy-button.png);
+	}
+	#extending-benefits-block h3 a {
+		background-image: url(../images/t-extending-benefits-button.png);
+	}
+	#business-efficiency-block h3 a {
+		background-image: url(../images/t-sub-nav-business-efficiency-button.png);
+	}
+	
+}
+
+
+/*----- Desktop breakpoint -------*/
+@media screen and (min-width: $screen-sm-max) { // width > 991 (was $screen-md-min or 992)
+
+
+	.row-no-margin {
+		background: url("../images/d-t2-2014-state-of-the-grid.gif") 180px 0 no-repeat !important;
+	}
+	#main-content {
+		padding-left: 0;
+		padding-right: 0;
+		margin-top: 45px;
+	}
+
+	.sog-image {
+		float: right;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	.badge-content {
+		//border: 1px solid black;
+		padding: 0 !important;
+		h3 {
+			margin: 0 !important;
+			a {
+				display: block;
+				width: 160px;
+				height: 35px;
+				background: url(../images/d-sub-nav-renewable-integration.png) top left no-repeat;
+				&:hover {
+					background-position: 0 -35px;
+				}
+			}
+		}
+		// programmatic hover via JS
+		&.hovered {
+			h3 a {
+				background-position: 0 -35px;
+			}
+		}
+	}
+	
+	#renewables-integration-block h3 a {
+		background-image: url(../images/d-sub-nav-renewable-integration-button.png);
+	}
+	#smarter-grid-block h3 a {
+		background-image: url(../images/d-sub-nav-smarter-grid-button.png);
+	}
+	#grid-resiliency-block h3 a {
+		background-image: url(../images/d-sub-nav-grid-resiliency-button.png);
+	}
+	#resource-adequacy-block h3 a {
+		background-image: url(../images/d-sub-nav-resource-adequacy-button.png);
+	}
+	#extending-benefits-block h3 a {
+		background-image: url(../images/d-sub-nav-extending-benefits-button.png);
+	}
+	#business-efficiency-block h3 a {
+		background-image: url(../images/d-sub-nav-business-efficiency-button.png);
+	}
+	
+}

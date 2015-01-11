@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/images/icons/favicon.ico">
+
+    <title>Static Top Navbar Example for Bootstrap</title>
+
+    <!-- CSS including core Bootstrap styles -->
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+		<div class="container">
+			<ul class="head-nav">
+				<li><a href="#">CEO and chairman letter</a></li>
+				<li><a href="#">contact us</a></li>
+				<li><a href="#">home</a></li>
+				<li><a href="#">visit caliso.com</a></li>
+				<li><img src="#"/></li>
+			</ul>
+		</div>
+		<div class="container">
+			<img id="iso-logo" src="images/d-cal-iso-logo.png"/>
+			<img id="lead-inov" src="images/d-t2-leadership-and-innovation.gif"/>
+		</div>
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active" id="renew"><a href="#">Renewables Integration</a></li>
+            <li id="grid"><a href="#">Smarter Grid</a></li>
+            <li id="resiliency"><a href="#">Grid Resiliency</a></li>
+						<li id="resource"><a href="#">Resource Adequacy</a></li>
+						<li id="extend"><a href="#">Extending Benefits</a></li>
+						<li id="business"><a href="#">Business Efficiency</a></li>						
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+    <div class="container">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+				<img src="images/d-t2-renewable-integration-banner-left.jpg"/>
+        <img src="images/d-t2-renewable-integration-banner-right.png"/>
+      </div>
+
+    </div> <!-- /container -->
+
+		<div class="container" id="main-content">
+			<div class="row">
+				<div class="col-lg-4 lcol" id="side-nav">
+          <ul class="side-nav-links">
+						<li class="item first"><a href="#">Progressive Growth of Preferred Resources</a></li>
+						<li class="item"><a href="#">Forecasting Innovations</a></li>
+						<li class="item"><a href="#">Knowledge is Power</a></li>
+						<li class="item"><a href="#">Renewables and Growth</a></li>
+					</ul>
+       </div><!-- /.col -->
+        <div class="col-lg-8 rcol" id="cell1">
+          <h2 class="block-title">Progressive Growth of Preferred Resources</h2>
+					<div class="block-content">
+	          <p>California prides itself on being a national leader in advancing a sustainable energy future. And with good reason. In recent years, California enacted policies aimed at reducing greenhouse gases and increasing renewable resource development. As a result of these forward-thinking policies, California now ranks first in the United States for total megawatts of installed solar and second behind Texas for total megawatts of installed wind</p>
+						<p>The growth in these preferred resources is nothing short of phenomenal.</p>
+						<img src="images/d-t2-wind-and-solar-growth-chart.gif"/>
+	          <p>In support of the state's goals, the California Independent System Operator (ISO) has steadily integrated more than XX megawatts of zer0-emission resources onto the grid despite the operational challenges inherent with variable resources. More importantly, actual production levels of wind and solar are soaring.</p>
+						<p class="content-header">Wind and solar records:<p>
+						<img src="images/d-t2-wind-and-solar-records.gif"/>
+						<p>Combined, wind and solar resources now account for 11,121 MW interconnected to the ISO grid. In total, all renewables (including geothermal) make up about 15,000 MW of ISO generation mix.</p>
+						<p>With these impressive wind and solar production levels, the ISO is advancing a sustainable energy future to further California's goal of generating one-third of the state's electricity using renewable resources by 2020.</p>
+					</div>
+        </div><!-- /.col -->
+			</div><!-- /.row -->		
+		</div><!-- /.container -->
+
+		<!-- Site footer -->
+    <div class="container">
+			<footer id="footer">
+				<p>Copyright &copy; 2005-2014 California Independent System Operator. All rights reserved</p>
+			</footer>
+		</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

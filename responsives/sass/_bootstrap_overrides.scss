@@ -1,0 +1,76 @@
+
+/* _bootstrap_overrides.scss */
+/* Override existing bootstrap styles or add styles for which we haven't imported the entire bootstrap.css for */
+
+@import "compass/css3/box-sizing";
+*,
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+
+html {
+	// Normalize styles
+  font-family: sans-serif;
+	font-size: 100%; // include to override bootstrap html font-size of 10px
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+// Bootstrap Variables =========== /
+
+$font-size-base:  16px;
+
+// => Default Bootstrap Breakpoint Variables:
+
+// Extra small screen / phone: $screen-xs
+// $screen-xs-min & $screen-phone = 480px to $screen-xs-max = 767px
+
+// Small screen / tablet: $screen-sm
+// $screen-sm-min & $screen-tablet = 768px to $screen-sm-max = 991px
+
+// Medium screen / desktop: $screen-md
+// $screen-md-min & $screen-desktop = 992px to $screen-md-max = 1999px
+
+// Large screen / wide desktop: $screen-lg
+// $screen-lg-min 1200px to higher
+
+// => Bootstrap Default Grid Variables
+// $grid-columns = 12
+// $grid-gutter-width = 30px
+// Navbar collapse at breakpoint:
+// $grid-float-breakpoint = 768px
+// Point at which the navbar begins collapsing.
+// $grid-float-breakpoint-max = 767px
+
+
+// => Container sizes
+// Small screen / tablet: $container-tablet = 750px
+// $screen-sm-min and up: 750px
+// Medium screen / desktop: $container-desktop = 970px
+// For `$screen-md-min` and up: $container-md = 970px
+// Large screen / wide desktop: $container-large-desktop = 1170px
+// For `$screen-lg-min` and up: $container-lg = 1170px
+
+
+/* Bootstrap styles to use for screen readers */
+/* Used for skip to content and form elements where labels should only appear to screen readers */
+.sr-only {
+	position:absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+.sr-only-focusable:active, .sr-only-focusable:focus {
+	position: static;
+	width: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	clip: auto;
+}

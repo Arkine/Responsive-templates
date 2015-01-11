@@ -1,0 +1,409 @@
+/* _navigation.scss */
+@import "compass";
+
+// Share this custom button 
+.stButton .sharethis {
+	background-image: url(../images/icons/d-share.png) !important;
+	padding: 0;
+	margin-bottom: -4px;
+}
+
+// styles from navbar-static-top template
+.navbar-static-top {
+	background-color: #fff;
+	border: none;
+}
+.navbar-default .navbar-nav { 
+	>li {				
+		a {
+			text-align: center;
+			font-family: Arial, Helvetica, sans-serif;
+			letter-spacing: .05em;
+		}
+	}
+}
+.navbar-toggle {
+	border: 1px solid $nav_toggle_outline_color;
+	margin-top: 3px;
+	border-radius: 0 !important;
+	padding: 9px 8px;
+	.icon-bar {
+		background-color: $nav_toggle_color;
+	}
+	width: 38px;
+	height: 36px;
+}
+
+.lead-inov {
+	padding-top: 7px; // apply offset for flush top with logo letters
+}
+
+/*---------- Media Queries --------------------------------------------*/
+/*																	   */
+/*The following has been uploaded for reference						   */
+/*																	   */
+/* Extra small screen / phone: $screen-xs							   */
+/* $screen-xs-min & $screen-phone = 480px to $screen-xs-max = 767px    */
+/*																	   */
+/* Small screen / tablet: $screen-sm								   */
+/* $screen-sm-min & $screen-tablet = 768px to $screen-sm-max = 991px   */
+/*																	   */
+/* Medium screen / desktop: $screen-md								   */
+/* $screen-md-min & $screen-desktop = 992px to $screen-md-max = 1999px */
+/*																	   */
+/* Large screen / wide desktop: $screen-lg					           */
+/* $screen-lg-min 1200px to higher									   */
+/*																	   */
+/*---------------------------------------------------------------------*/
+
+
+@media screen and (max-width: $screen-xs-min) { // width < 480px
+	#navbar  {
+		margin-left: 20px;
+		margin-right: 20px;
+		width: 100%;
+	}
+	.navbar  {
+		display: none;
+	}
+	.lead-inov {
+		margin-bottom: 11px;
+	}
+}
+@media screen and (min-width: $screen-xs-min) { // width > 480px 
+	.navbar-nav { 
+		margin-right: -46px; 
+		background: url(../images/d-t2-main-nav-left.gif) left top no-repeat; 
+	} 
+} 
+
+//@media screen and (min-width: $screen-xs-min) and (max-width: $screen-md-min) { // 480px < width < 992px ===> TODO: Take note of difference
+@media screen and (min-width: $screen-xs-min) and (max-width: $screen-sm-max) { // 480px < width < 991px 
+	.jumbotron {
+		padding: 0 !important;
+	}
+	ul.head-nav {
+		float: right;
+		margin-top: 10px;
+		margin-bottom: 38px; // 45 - 7 to negotiate logo offset, eg., right slogan flush-top with logo letters NOT logo mark
+		>li {
+			display: inline-block;
+			text-transform: uppercase;
+			padding-left: 7px;
+			padding-right: 18px;
+			background: url(../images/icons/d-red-cross.gif) 98% 55% no-repeat;
+			
+			&#vcaiso {
+				padding-right: 0;
+				background-image: none;
+			}
+			&.last {
+				//background: url(../images/icons/d-share.png) 50% 50% no-repeat;
+				background: none 50% 50% no-repeat !important;
+				height: 15px;
+				width: 13px;
+				margin-bottom: -3px;
+			}
+			a {
+				color: $gray_on_white_color;
+				font-family: Arial, Helvetica, sans-serif;
+				@include font_size(12px);
+				text-transform: uppercase;
+				letter-spacing: .075em;
+			}
+		}
+	}	
+	
+	.navbar-default {
+		background-color: $light_gray_color;
+		min-height: inherit !important;
+		.navbar-nav { 
+			>li {
+				border-right: 1px solid #FFF;
+				
+				&#renew {
+					width: 141px;
+				}
+				&#grid {
+					width: 86px;
+				}
+				&#resiliency {
+					width: 95px;
+				}
+				&#letter {
+					width: 126px;
+				}
+				&#extend {
+					width: 118px;
+				}
+				&#business {
+					width: 117px;
+				}		
+				&.first {
+					margin-left: 41px;
+				}
+				&.last {
+					border-right-width: 0;
+				}
+				&#embellish {
+					background: url(../images/d-t2-main-nav-right.gif) left top no-repeat;
+					width: 39px;
+				}
+				a {			
+					padding: 0 5px;	
+					@include font_size(10px, !important);
+					@include line_height(37px);
+					color: $charcoal_color;
+					&:hover {
+						background-color: $navbar_active;
+					}
+				}
+				&.active {
+					background-color: $navbar_active !important;	
+					//border: 1px solid blue;			
+				}
+			}
+		}
+	}
+
+}
+
+/*----- Tablet breakpoint ("M") -------*/
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // 768 < width < 991
+
+	.navbar-default {
+		#navbar {
+			.navbar-nav { 
+				margin-left: -10px; // => adj menu
+				margin-right: -10px;
+				>li {
+					&#renew {
+						width: 146px !important; // => adj menu
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $screen-md-min) { // width > 992px - max
+	.navbar-default {
+		display: block;
+	}
+	.navbar-default {
+		background-color: $light_gray_color;
+		.navbar-nav { 
+			margin-left: -39px;
+			padding-left: 39px; 
+			>li {			
+
+				a {								
+					@include font_size(13px, !important);
+					@include line_height(50px);
+				}
+			}
+		}
+	}
+	ul.head-nav {
+		float: right;
+		margin-top: 10px;
+		margin-bottom: 32px; // 39 - 7 to negotiate logo offset, eg., right slogan flush-top with logo letters NOT logo mark
+		>li {
+			display: inline-block;
+			text-transform: uppercase;
+			padding-left: 7px;
+			padding-right: 20px;
+			background: url(../images/icons/d-red-cross.gif) 98% 55% no-repeat;
+			
+			&#vcaiso {
+				padding-right: 0;
+				background-image: none;
+			}
+			&.last {
+				//background: url(../images/icons/d-share.png) 50% 50% no-repeat;
+				background: none 50% 50% no-repeat !important;
+				height: 15px;
+				width: 13px;
+				margin-bottom: -3px;
+			}
+			a {
+				padding: 0 5px;
+				color: $gray_on_white_color;
+				font-family: Arial, Helvetica, sans-serif;
+				@include font_size(12px);
+				text-transform: uppercase;
+				letter-spacing: .075em;
+			}
+		}
+	}	
+}
+@media screen and (max-width: $screen-xs-max) { //  width < 767px - mobile
+	
+	// Collapse / accordion processed so hide static. TODO: After resizing from mobile to desktop links will not work since section id's are gone
+	#side-nav {
+		display: none;
+	}
+	
+	.shadowed {
+		@include box-shadow(#ccc 3px 3px 3px);
+	}
+	.jumbotron {
+		padding: 0;
+		min-width: 220px;
+		background: #fff;
+		text-align: center;
+	}
+	#navbar {
+		position: absolute;
+		width: 100%;	
+		z-index: 500;
+	}
+	ul.nav {
+		width: 100%;
+	}
+	ul.side-nav-links li {
+		padding-right: 15px !important;
+		a {
+			//background: url('../images/m-blue-arrow.png') 100% 50% no-repeat;
+		}
+	}
+	ul.nav li {	
+		padding-left: 10px;
+		overflow: hidden;
+		border-bottom: 2px solid #fff;
+		
+		&:hover {
+			
+			a {
+				color: #000;
+				background-color: transparent;
+			}
+		}
+		a{
+			height: 45px;
+			color: #fff;
+			text-transform: uppercase;
+			background: url('../images/m-white-arrow.png') 95% 50% no-repeat;
+		}
+		&#embellish {
+			display: none;
+		}
+		&#renew {
+			// Green gradient
+			background-color: #8dc63f; // Old browsers
+			@include filter-gradient(#64ad3f, #8dc63f, horizontal); // IE6-9
+			@include background-image(linear-gradient(left,  #64ad3f 6%,#8dc63f 93%));
+		}
+		&#grid {
+			// Navy gradient
+			background-color: #467796; // Old browsers
+			@include filter-gradient(#324b69, #467796, horizontal); // IE6-9
+			@include background-image(linear-gradient(left,  #324b69 6%,#467796 93%));
+		}
+		&#resiliency {
+			// Light orange gradient
+			background-color: #fdb822; // Old browsers
+			@include filter-gradient(#f09120, #fdb822, horizontal); // IE6-9
+			@include background-image(linear-gradient(left,  #f09120 6%,#fdb822 93%));
+		}
+		&#letter { 
+			// Dark orange gradient
+			background-color: #A84E25; // Old browsers
+			@include filter-gradient(#bb5531, #A84E25, horizontal); // IE6-9
+			@include background-image(linear-gradient(left,  #bb5531 6%,#A84E25 93%));
+		}
+		&#extend {
+			// Teal gradient
+			background-color: #35bdb2; // Old browsers
+			@include filter-gradient(#439b98, #35bdb2, horizontal); // IE6-9
+			@include background-image(linear-gradient(left,  #439b98 6%,#35bdb2 93%));
+		}
+		&#business {
+			// Olive gradient
+			background-color: #8d8b00; // Old browsers
+			@include filter-gradient(#647538, #8d8b00, horizontal); // IE6-9
+			@include background-image(linear-gradient(left,  #647538 6%,#8d8b00 93%));
+		}
+		&.appended {
+			background-color: $light_gray_color;
+			a {
+			  text-transform: inherit;
+				color: $appended_text_gray_color;
+				background: url('../images/m-blue-arrow.png') 95% 50% no-repeat;
+			}
+		}
+		&.last {
+			border-bottom: none;		
+		}
+		&#share {
+			display: none;
+		}
+	}
+}
+
+@media screen and (min-width: $screen-sm-min) { // width > 768px
+	.navbar-default {
+		background-color: $light_gray_color;
+		.navbar-nav { 
+			
+			>li {
+				border-right: 1px solid #FFF;
+				background-color: $light_gray_color;
+				&.first {
+					border-left: 1px solid #FFF;
+				}
+				&.last { // right crosses embellish
+					border-right-width: 0;
+				}
+				&#embellish {
+					background: url(../images/d-t2-main-nav-right.gif) left top no-repeat;
+					width: 39px;
+				}
+				a {			
+					color: $charcoal_color;
+					&:hover {
+						background-color: $navbar_active;
+					}
+				}
+				&.active {
+					background-color: $navbar_active !important;	
+				}
+			}
+		}
+	}
+
+}
+
+@media screen and (min-width: $screen-md-min) { // width > 992px
+	.lead-inov {
+		padding-top: 0 !important;
+	}
+	.navbar-static-top {
+		margin-bottom: 56px;
+	}
+	.navbar-default {
+		.navbar-nav {
+			>li {
+				a {			
+					padding: 0 24px;	
+					@include font_size(13px, !important);
+					@include line_height(50px);
+				}
+			}
+		}
+	}
+}
+
+/*------ Desktop breakpoint (L) [ just following $screen-sm-max=991 ]--------*/
+@media screen and (min-width: $screen-md-min) and (max-width: $screen-lg-min) { // 992 < width < 1200
+	.jumbotron {
+		padding: 0 !important;
+		border-radius: 0 !important;
+	}
+}
+
+@media screen and (min-width: $screen-lg-min) { // width > 1200px - max
+
+}
+
+/* /_navigation.scss */	

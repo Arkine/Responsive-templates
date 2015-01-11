@@ -1,0 +1,45 @@
+	/* _layout.scss */
+#main-content {
+.row {
+	
+	.col {
+			
+			&#side-nav {
+				@include make-lg-column(4);	
+				@include make-md-column(4);			
+				@include make-sm-column(4);
+				@include make-xs-column(12);
+			}
+			&.rcol {
+				@include make-lg-column(8);
+				@include make-md-column(8);
+				@include make-sm-column(8);
+				@include make-xs-column(12);
+				
+				/* 2014-12-10 RAK: TBD move to other styles files */
+				ul, ol {
+					padding-left: 0;
+					margin-left: 15px;
+					li {
+						margin-bottom: 7px;
+					}
+				}
+			
+			}	
+			.tlcol {
+				@include make-xs-column(3);
+				@include make-sm-column(3);
+				@include make-md-column(3);
+				@include make-lg-column(3);
+			}
+			.trcol {
+				@include make-xs-column(9);
+				@include make-sm-column(9);
+				@include make-md-column(9);
+				@include make-lg-column(9);
+			}
+		}
+	}
+}
+
+/* /_layout.scss */
