@@ -1,14 +1,15 @@
 # Location of the theme's resources.
-css_dir = "market/Pages/2014StateOfTheGrid/css"
+css_dir = "market/pages/2014StateOfTheGrid/css/components"
 sass_dir = "sass"
-images_dir = "market/Pages/2014StateOfTheGrid/images"
-javascripts_dir = "market/Pages/2014StateOfTheGrid/js"
+images_dir = "images"
+fonts_dir = "assets/fonts"
+javascripts_dir = "js"
 
 # Require any additional compass plugins installed on your system.
 require 'compass'
 require 'bootstrap-sass'
 
-# To enable relative paths to assets via compass helper functions. Uncomment:
+# To enable relative paths to assets via compass helper functions. 
 relative_assets = true
 
 # Conditional enable line comments when in development mode.
