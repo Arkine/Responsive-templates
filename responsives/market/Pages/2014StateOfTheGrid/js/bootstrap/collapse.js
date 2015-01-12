@@ -9,7 +9,7 @@
 
 +function ($) {
   'use strict';
-
+  
   // COLLAPSE PUBLIC CLASS DEFINITION
   // ================================
 

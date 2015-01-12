@@ -2299,6 +2299,5 @@
     $.fn.popover = old
     return this
   }
-
 }(jQuery);
 
