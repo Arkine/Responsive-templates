@@ -1,5 +1,5 @@
 # Location of the theme's resources.
-css_dir = "market/pages/2014StateOfTheGrid/css/components"
+css_dir = "css"
 sass_dir = "sass"
 images_dir = "images"
 fonts_dir = "assets/fonts"

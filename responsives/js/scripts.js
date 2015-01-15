@@ -5,47 +5,10 @@
 	var processed = false;
 	var hashTagActive = "";
 	
-$.fn.mergeList = function  (newList) { // appends list items into new list
+$.fn.stripPanel = function  () { // appends list items into new list
 	
-	var newListItems = $(newList + " li");
-	var count = 0;
-	var length = this.children('li').length;
-	
-	//remove the classes that are not properly assigned
-	this.children('li').removeClass('first');
-	this.children('li').removeClass('last');
-	newListItems.removeClass('last');
 
-	// tag the second to last item as being the last item
-	this.children('li').each(function(li) {
-
-		 if(count == (length - 2)) {
-			 $(this).addClass('last');
-		 };
-
-		 count++;		
-	});
-	
-	this.children('li').addClass('appended');
-	this.children('li').appendTo(newList);
 }
-
-
-
-
-// WAI level-1 compliancy - Bypass Blocks 2.4.1
-// Nic Zakas "skip to content" next focus fix
-// See http://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
-// TEST Checkpoint: https://code.google.com/p/chromium/issues/detail?id=37721
-window.addEventListener("hashchange", function(event) {
-  var element = document.getElementById(location.hash.substring(1));
-  if (element) {
-    if (!/^(?:a|select|input|button|textarea)$/i.test(element.tagName)) {
-    	element.tabIndex = -1;
-    }
-    element.focus();
-  }
-}, false);
 
 var mqSync = function () {
 	// Fix for Opera issue when using font-family to store value
@@ -103,15 +66,15 @@ var expand = function () {
 			case 'XS':
 			case 'S':
         collapsedView();
-				bend();
+				
 				break;
 			case 'M':
 				expandedView(); // was previously in conditional above
-				bend(); // If we can't change position of elements using Bootstrap push / pull, then bend it
+				
 				break;
 			case 'L':
         expandedView();
-				unbend(); // Set positioning back
+				
 				break;
 			default:
 				break;
@@ -120,37 +83,6 @@ var expand = function () {
   }
 };
 
-// Do stuff we can't do with CSS
-var bend = function () {
-	
-	/* // Examples: 
-	if($('#nested-left').length !== 0) {
-		$('#nested-left').removeClass("col-xs-12 col-sm-12 col-md-4 col-lg-4"); // Note: Update if col defs chnage
-		
-		$('#nested-right').removeClass("col-md-8");
-		$('#nested-right').addClass("col-md-12 bent");
-		
-		$('.sidebar-right').append($('#nested-left'));
-	}
-	*/
-};
-
-// Reverse stuff done for XS, S, and M
-var unbend = function () {
-	
-	/* // Examples: 
-	if($('.sidebar-right #nested-left').length !== 0) {
-		$('#nested-left').addClass("col-xs-12 col-sm-12 col-md-4 col-lg-4");
-		$('#nested-right').removeClass("col-md-12 bent");
-		$('#nested-right').addClass("col-md-8");
-		$('#content-core > .row').append($('#nested-left'));
-	}
-	*/
-};
-
- /* CollapsedView - On M and L breakpoints, process for collapsed panel view
- 	*	
- */
 function expandedView() {
 
     // Remove the data-toggle attribute to allow the links to work in desktop
@@ -408,16 +340,6 @@ function myResize() {
 	
 } // /myResize()
 
-// Exclude some pages from accordion treatment
-if(typeof section !== 'undefined') {
-	var exclude = ['letter-section','ra-section','be-section'];
-	for(var i in exclude) {
-		if(exclude[i] == section) {
-			toggleActive = false;
-		}
-	}
-}
-
 
 
 $(document).ready(function() {
@@ -448,13 +370,7 @@ $(document).ready(function() {
 		}
 	}
 	
-		// build a custom table for callouts due to img size-skewing issues
-		if($('.co-wb').length !== 0) {
-			if(activeMQ == 'S') {
-				
-				
-			}
-		}
+		
 	
 	//mqSync();
 	if(typeof window.console !== "undefined") {
